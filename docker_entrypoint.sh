@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "success"
-python3 asyncio_test.py
+python3 run.py 0 2
